@@ -55,3 +55,6 @@ function addOne(callback) {
   })
 }
 ```
+
+###5 Filtered list
+path.extname(file) gets the file extention name of a file in dir
