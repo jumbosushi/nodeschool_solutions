@@ -31,4 +31,27 @@ fs.readFileSync('path/file')
 
 What is Buffer?
 Node's way of storing info
-.toString() converts it to string 
+.toString() converts it to string
+
+**This approach is synchronous**
+It is blocking I/O!
+
+###4. First  Async IO
+
+fs.readFile is designed to be Async
+
+readFile takes two parameters, file data to parse & function that
+will be called once the file is done parsing.
+
+callbacks are functions that can be passed to the function that would include
+Asynchronous function, for example (readFile)
+
+```javascript
+function addOne(callback) {
+  fs.readFile('number.txt', function doneReading(err, fileContents) {
+    myNumber = parseInt(fileContents)
+    myNumber++
+    callback()
+  })
+}
+```
