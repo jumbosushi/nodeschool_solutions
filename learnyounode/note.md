@@ -58,3 +58,25 @@ function addOne(callback) {
 
 ###5 Filtered list
 path.extname(file) gets the file extention name of a file in dir
+
+###6 Make it Modular
+
+Callbacks notes:
+Call backs usually follows this format (according ot nodejitsu.com)
+
+```javascript
+function asyncOperation ( a, b, c, callback ) {
+  // ... lots of hard work ...
+  if ( /* an error occurs */ ) {
+    return callback(new Error("An error has occured"));
+  }
+  // ... more work ...
+  callback(null, d, e, f);
+}
+
+asyncOperation ( params.., function ( err, returnValues.. ) {
+   //This code gets run after the async operation gets run
+});
+
+// from https://docs.nodejitsu.com/articles/getting-started/control-flow/what-are-callbacks
+```
